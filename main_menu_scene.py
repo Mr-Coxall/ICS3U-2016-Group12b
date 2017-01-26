@@ -18,11 +18,7 @@ class MainMenuScene(Scene):
         self.center_of_screen_x = self.size_of_screen_x/2
         self.center_of_screen_y = self.size_of_screen_y/2
         
-<<<<<<< HEAD
         # add white background color
-=======
-        # add MT blue background color
->>>>>>> 54f632b5e74b00ba745e9833d9742486de1f8b97
         background_position = Vector2(self.center_of_screen_x, self.center_of_screen_y)
         self.background = SpriteNode(position = background_position, 
                                      color = 'white', 
