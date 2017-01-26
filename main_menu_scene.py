@@ -1,16 +1,14 @@
 # Created by: Mr. Coxall
 # Created on: Sep 2016
 # Created for: ICS3U
-# This scene shows a splash screen for 2 seconds,
-#   then transitions to the main menu.
+# This scene shows the main menu.
 
 from scene import *
-import time
 
 from main_menu_scene import *
 
 
-class SplashScene(Scene):
+class MainMenuScene(Scene):
     def setup(self):
         # this method is called, when user moves to this scene
         
@@ -20,26 +18,16 @@ class SplashScene(Scene):
         self.center_of_screen_x = self.size_of_screen_x/2
         self.center_of_screen_y = self.size_of_screen_y/2
         
-        # create timer, so that after 2 seconds move to next scene
-        self.start_time = time.time()
-        
-        # add background color
+        # add white background color
         background_position = Vector2(self.center_of_screen_x, self.center_of_screen_y)
         self.background = SpriteNode(position = background_position, 
                                      color = 'white', 
                                      parent = self, 
                                      size = self.size)
-        self.school_crest = SpriteNode('./assets/sprites/MT_Game_Studio.png',
-                                       parent = self,
-                                       position = background_position,
-                                       size = self.size)
     
     def update(self):
         # this method is called, hopefully, 60 times a second
-        
-        # after 2 seconds, move to main menu scene
-        if not self.presented_scene and time.time() - self.start_time > 2:
-            self.present_modal_scene(MainMenuScene())
+        pass
     
     def touch_began(self, touch):
         # this method is called, when user touches the screen
